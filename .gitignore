@@ -1,0 +1,8 @@
+.vs
+Builds
+Library
+Packages
+Temp
+*.csproj
+*.sln
+*.vrmanifest

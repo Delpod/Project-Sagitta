@@ -1,0 +1,14 @@
+{
+  "actions": [
+    {
+      "name": "/actions/saggita/in/lefthand_anim",
+      "type": "skeleton",
+      "skeleton": "/skeleton/hand/left"
+    },
+    {
+      "name": "/actions/saggita/in/righthand_anim",
+      "type": "skeleton",
+      "skeleton": "/skeleton/hand/right"
+    }
+  ]
+}
