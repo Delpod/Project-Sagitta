@@ -33,8 +33,7 @@ public class PlayerController : MonoBehaviour {
             vrRightWrist = rightWrist.transform;
         }
     }
-
-	// Update is called once per frame
+ 
 	void Update () {
         if (leftHand && vrLeftWrist) {
             leftHand.transform.position = vrLeftWrist.position;
@@ -53,7 +52,10 @@ public class PlayerController : MonoBehaviour {
         }
 
         if (head && vrHead) {
-            head.transform.position = vrHead.transform.position;
+            transform.position = new Vector3(
+                vrHead.transform.position.x,
+                transform.position.y,
+                vrHead.transform.position.z);
             head.transform.rotation = vrHead.transform.rotation;
             head.transform.Rotate(0f, 270f, 270f);
         }
