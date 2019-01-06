@@ -131,8 +131,6 @@ namespace Valve.VR
         protected virtual void AssignBonesArray()
         {
             bones = skeletonRoot.GetComponentsInChildren<Transform>();
-            Debug.Log(skeletonRoot);
-            Debug.Log(bones.Length);
         }
 
         protected virtual void OnEnable()

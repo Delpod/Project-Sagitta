@@ -17,10 +17,6 @@ public class IKHandling : MonoBehaviour {
         animator = GetComponent<Animator>();
 	}
 
-    private void Update () {
-		    
-	}
-
     private void OnAnimatorIK(int layerIndex) {
         animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, ikWeight);
         animator.SetIKPositionWeight(AvatarIKGoal.RightHand, ikWeight);
