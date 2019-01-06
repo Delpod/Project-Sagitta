@@ -74,29 +74,50 @@ public class PlayerController : MonoBehaviour {
                 float distance = phi > 180f ? 360f - phi : phi;
                 float signedDistance = distance * ((a - b >= 0 && a - b <= 180) || (a - b <= -180 && a - b >= -360) ? 1 : -1);
 
-                if (signedDistance > 50f) {
+                if (signedDistance > 30f) {
                     lockRotation = true;
-                    StartCoroutine(RunTask());
-                    neededRotation = Quaternion.Euler(0f, a - 90f, 0f);
-                    animator.SetTrigger("TurnLeft");
-                } else if (signedDistance < -50f) {
+                    StartCoroutine(RunFinishTurnTask());
+                    neededRotation = Quaternion.Euler(0f, a - 45f, 0f);
+                    animator.SetBool("TurnLeft", true);
+                } else if (signedDistance < -30f) {
                     lockRotation = true;
-                    StartCoroutine(RunTask());
-                    neededRotation = Quaternion.Euler(0f, a + 90f, 0f);
-                    animator.SetTrigger("TurnRight");
+                    StartCoroutine(RunFinishTurnTask());
+                    neededRotation = Quaternion.Euler(0f, a + 45f, 0f);
+                    animator.SetBool("TurnRight", true);
                 }
             } else {
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, neededRotation, Time.deltaTime * 180f);
             }
 
             head.transform.rotation = vrHead.transform.rotation;
-
             head.transform.Rotate(0f, 270f, 270f);
+
+            if (head.transform.rotation.eulerAngles.x > 60f && head.transform.rotation.eulerAngles.x < 180f) {
+                head.transform.rotation = Quaternion.Euler(
+                    60f,
+                    head.transform.rotation.eulerAngles.y,
+                    head.transform.rotation.eulerAngles.z);
+            }
+
+
+            if (head.transform.rotation.eulerAngles.z > 300f) {
+                head.transform.rotation = Quaternion.Euler(
+                    head.transform.rotation.eulerAngles.x,
+                    head.transform.rotation.eulerAngles.y,
+                    300f);
+            } else if (head.transform.rotation.eulerAngles.z < 235f) {
+                head.transform.rotation = Quaternion.Euler(
+                    head.transform.rotation.eulerAngles.x,
+                    head.transform.rotation.eulerAngles.y,
+                    235f);
+            }
         }
     }
 
-    IEnumerator RunTask() {
+    IEnumerator RunFinishTurnTask() {
         yield return new WaitForSeconds(0.5f);
+        animator.SetBool("TurnLeft", false);
+        animator.SetBool("TurnRight", false);
         lockRotation = false;
     }
 }
