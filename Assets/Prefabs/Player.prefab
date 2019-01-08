@@ -354,10 +354,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4865045634807228}
   - component: {fileID: 95689116124526568}
-  - component: {fileID: 114097995664705752}
   m_Layer: 0
-  m_Name: Perspective Left Hand
-  m_TagString: LeftHand
+  m_Name: Perspective Hand Left
+  m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -722,7 +721,7 @@ GameObject:
   - component: {fileID: 4858136746538408}
   m_Layer: 0
   m_Name: Right Elbow
-  m_TagString: Untagged
+  m_TagString: RightIKTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1037,9 +1036,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4090778104298306}
   - component: {fileID: 95417181076033230}
-  - component: {fileID: 114514359251486318}
   - component: {fileID: 114896835040595016}
   - component: {fileID: 114334860599998900}
+  - component: {fileID: 114243449474325112}
+  - component: {fileID: 114628365072608060}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1713,7 +1713,7 @@ GameObject:
   - component: {fileID: 4154999165947428}
   m_Layer: 0
   m_Name: Left Elbow
-  m_TagString: Untagged
+  m_TagString: LeftIKTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2151,9 +2151,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4758588840910868}
   - component: {fileID: 95718715026705718}
-  - component: {fileID: 114512531792167064}
   m_Layer: 0
-  m_Name: Perspective Right Hand
+  m_Name: Perspective Hand Right
   m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4367,26 +4366,38 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114097995664705752
+--- !u!114 &114243449474325112
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1198467837868786}
+  m_GameObject: {fileID: 1551511499977444}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00f6c0d7b5a00aa4a8d38a09a0480032, type: 3}
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonAction: {fileID: 11400000, guid: 87bcc463ad051f641bc437a7835de784, type: 2}
-  inputSource: 1
-  rangeOfMotion: 1
-  skeletonRoot: {fileID: 4398303848953686}
-  origin: {fileID: 0}
-  updatePose: 1
-  onlySetRotations: 0
-  skeletonBlend: 1
-  mirroring: 0
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 135
+    i1: 142
+    i2: 109
+    i3: 93
+    i4: 212
+    i5: 211
+    i6: 22
+    i7: 4
+    i8: 233
+    i9: 207
+    i10: 230
+    i11: 188
+    i12: 233
+    i13: 234
+    i14: 151
+    i15: 245
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
 --- !u!114 &114334860599998900
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4403,27 +4414,7 @@ MonoBehaviour:
   rightHandtIKTarget: {fileID: 0}
   hintLeftHand: {fileID: 4154999165947428}
   hintRightHand: {fileID: 4858136746538408}
---- !u!114 &114512531792167064
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1960480715600430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00f6c0d7b5a00aa4a8d38a09a0480032, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skeletonAction: {fileID: 11400000, guid: 036498e9c4b3c9a4ca9e481466c465de, type: 2}
-  inputSource: 2
-  rangeOfMotion: 1
-  skeletonRoot: {fileID: 4233708194331662}
-  origin: {fileID: 0}
-  updatePose: 1
-  onlySetRotations: 0
-  skeletonBlend: 1
-  mirroring: 0
---- !u!114 &114514359251486318
+--- !u!114 &114628365072608060
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4431,19 +4422,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1551511499977444}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 202a6e24b48d1684398409c47161adcb, type: 3}
+  m_Script: {fileID: 11500000, guid: 91c23641e8bc59c449c1c552281e9cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackingOriginTransform: {fileID: 4090778104298306}
-  hmdTransforms: []
-  hands:
-  - {fileID: 0}
-  - {fileID: 0}
-  headCollider: {fileID: 136766686256169812}
-  rigSteamVR: {fileID: 1882445654081182}
-  rig2DFallback: {fileID: 0}
-  audioListener: {fileID: 0}
-  allowToggleTo2D: 0
+  leftHand: {fileID: 1198467837868786}
+  rightHand: {fileID: 1960480715600430}
 --- !u!114 &114896835040595016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4455,10 +4438,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 754016302d3376c4c93ad6ea18819a91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vrHead: {fileID: 0}
   head: {fileID: 1262877860522582}
   leftHand: {fileID: 1325603473517228}
   rightHand: {fileID: 1292863246387526}
+  vrHead: {fileID: 0}
+  vrLeftWrist: {fileID: 0}
+  vrRightWrist: {fileID: 0}
 --- !u!136 &136428134175699280
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 114281483058428752}
   m_Layer: 0
   m_Name: vr_glove_left_model_slim
-  m_TagString: LeftHand
+  m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 4611541150188386}
   m_Layer: 0
   m_Name: wrist_l
-  m_TagString: HandWrist
+  m_TagString: LeftWrist
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class IKHandling : MonoBehaviour {
+public class IKHandling : NetworkBehaviour {
 
     Animator animator;
 
@@ -14,8 +15,26 @@ public class IKHandling : MonoBehaviour {
     public Transform hintRightHand;
 
     private void Start () {
+        if (isLocalPlayer) {
+            findLeftWrist();
+            findRightWrist();
+        }
         animator = GetComponent<Animator>();
 	}
+
+    void findLeftWrist() {
+        GameObject leftWrist = GameObject.FindWithTag("LeftWrist");
+        if (leftWrist) {
+            leftHandIKTarget = leftWrist.transform;
+        }
+    }
+
+    void findRightWrist() {
+        GameObject rightWrist = GameObject.FindWithTag("RightWrist");
+        if (rightWrist) {
+            rightHandtIKTarget = rightWrist.transform;
+        }
+    }
 
     private void OnAnimatorIK(int layerIndex) {
         animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, ikWeight);
