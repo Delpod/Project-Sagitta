@@ -12,6 +12,9 @@ public class PlayerController : NetworkBehaviour {
     public GameObject head;
     public GameObject leftHand;
     public GameObject rightHand;
+    public GameObject body;
+    public GameObject heads;
+    public GameObject hairs;
 
     public Transform vrHead;
     public Transform vrLeftWrist;
@@ -25,6 +28,9 @@ public class PlayerController : NetworkBehaviour {
             findLeftWrist();
             findRightWrist();
             findVRHead();
+            body.SetActive(false);
+            heads.SetActive(false);
+            hairs.SetActive(false);
         }
         animator = GetComponent<Animator>();
     }

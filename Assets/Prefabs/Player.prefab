@@ -1040,6 +1040,7 @@ GameObject:
   - component: {fileID: 114334860599998900}
   - component: {fileID: 114243449474325112}
   - component: {fileID: 114628365072608060}
+  - component: {fileID: 114395722077566514}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4414,6 +4415,27 @@ MonoBehaviour:
   rightHandtIKTarget: {fileID: 0}
   hintLeftHand: {fileID: 4154999165947428}
   hintRightHand: {fileID: 4858136746538408}
+--- !u!114 &114395722077566514
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1551511499977444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 1
+  m_SendInterval: 0.09090909
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!114 &114628365072608060
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4441,6 +4463,9 @@ MonoBehaviour:
   head: {fileID: 1262877860522582}
   leftHand: {fileID: 1325603473517228}
   rightHand: {fileID: 1292863246387526}
+  body: {fileID: 1945557009490614}
+  heads: {fileID: 1600885370435464}
+  hairs: {fileID: 1449722573584970}
   vrHead: {fileID: 0}
   vrLeftWrist: {fileID: 0}
   vrRightWrist: {fileID: 0}
