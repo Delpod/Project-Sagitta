@@ -22,12 +22,12 @@ public class PlayerController : NetworkBehaviour {
 
     private bool lockRotation = false;
     private Quaternion neededRotation;
- 
-    void Start () {
+
+    private void Start () {
         if (isLocalPlayer) {
-            findLeftWrist();
-            findRightWrist();
-            findVRHead();
+            FindLeftWrist();
+            FindRightWrist();
+            FindVRHead();
             body.SetActive(false);
             heads.SetActive(false);
             hairs.SetActive(false);
@@ -35,34 +35,39 @@ public class PlayerController : NetworkBehaviour {
         animator = GetComponent<Animator>();
     }
 
-    void findVRHead() {
+    private void FindVRHead() {
         GameObject head = GameObject.FindWithTag("VRCamera");
         if (head) {
             vrHead = head.transform;
         }
     }
 
-    void findLeftWrist() {
+    private void FindLeftWrist() {
         GameObject leftWrist = GameObject.FindWithTag("LeftWrist");
         if (leftWrist) {
             vrLeftWrist = leftWrist.transform;
         }
     }
 
-    void findRightWrist() {
+    private void FindRightWrist() {
         GameObject rightWrist = GameObject.FindWithTag("RightWrist");
         if (rightWrist) {
             vrRightWrist = rightWrist.transform;
         }
     }
  
-	void Update () {
+	private void Update () {
+        ManageHandsTransform();
+        ManageHeadTransform();
+    }
+
+    private void ManageHandsTransform() {
         if (leftHand && vrLeftWrist) {
             leftHand.transform.position = vrLeftWrist.position;
             leftHand.transform.rotation = vrLeftWrist.rotation;
             leftHand.transform.Rotate(90f, 0f, -90f);
         } else {
-            findLeftWrist();
+            FindLeftWrist();
         }
 
         if (rightHand && vrRightWrist) {
@@ -70,11 +75,12 @@ public class PlayerController : NetworkBehaviour {
             rightHand.transform.rotation = vrRightWrist.rotation;
             rightHand.transform.Rotate(-90f, 180f, -90f);
         } else {
-            findRightWrist();
+            FindRightWrist();
         }
+    }
 
+    private void ManageHeadTransform() {
         if (head && vrHead) {
-
             float absoluteMovement = (Mathf.Abs(transform.position.x - vrHead.position.x) + Mathf.Abs(transform.position.z - vrHead.position.z)) * Time.deltaTime * 1000f;
             animator.SetFloat("AbsoluteMovement", absoluteMovement);
             transform.position = new Vector3(
@@ -131,7 +137,7 @@ public class PlayerController : NetworkBehaviour {
         }
     }
 
-    IEnumerator RunFinishTurnTask() {
+     IEnumerator RunFinishTurnTask() {
         yield return new WaitForSeconds(0.5f);
         animator.SetBool("TurnLeft", false);
         animator.SetBool("TurnRight", false);

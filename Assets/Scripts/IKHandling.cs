@@ -16,20 +16,20 @@ public class IKHandling : NetworkBehaviour {
 
     private void Start () {
         if (isLocalPlayer) {
-            findLeftWrist();
-            findRightWrist();
+            FindLeftWrist();
+            FindRightWrist();
         }
         animator = GetComponent<Animator>();
 	}
 
-    void findLeftWrist() {
+    void FindLeftWrist() {
         GameObject leftWrist = GameObject.FindWithTag("LeftWrist");
         if (leftWrist) {
             leftHandIKTarget = leftWrist.transform;
         }
     }
 
-    void findRightWrist() {
+    void FindRightWrist() {
         GameObject rightWrist = GameObject.FindWithTag("RightWrist");
         if (rightWrist) {
             rightHandtIKTarget = rightWrist.transform;

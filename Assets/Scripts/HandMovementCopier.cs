@@ -21,17 +21,17 @@ public class HandMovementCopier : NetworkBehaviour {
             vrLeftHand = GameObject.FindWithTag("LeftHand");
             vrRightHand = GameObject.FindWithTag("RightHand");
 
-            getChildren(leftHandNodes, leftHand.transform);
-            getChildren(vrLeftHandNodes, vrLeftHand.transform);
-            getChildren(rightHandNodes, rightHand.transform);
-            getChildren(vrRightHandNodes, vrRightHand.transform);
+            GetChildren(leftHandNodes, leftHand.transform);
+            GetChildren(vrLeftHandNodes, vrLeftHand.transform);
+            GetChildren(rightHandNodes, rightHand.transform);
+            GetChildren(vrRightHandNodes, vrRightHand.transform);
         }
     }
 
-    private void getChildren(List<Transform> list, Transform start) {
+    private void GetChildren(List<Transform> list, Transform start) {
         foreach (Transform child in start) {
             list.Add(child);
-            getChildren(list, child);
+            GetChildren(list, child);
         }
     }
     

@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: F02
-  m_Shader: {fileID: 4800000, guid: 102ae67d75d24bf49b90cba8fedb7360, type: 3}
+  m_Shader: {fileID: 4800000, guid: f1856ec6a1877a9469b228be38cf22c8, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
