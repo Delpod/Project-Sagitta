@@ -16,9 +16,9 @@ public class PlayerController : NetworkBehaviour {
     public GameObject heads;
     public GameObject hairs;
 
-    public Transform vrHead;
-    public Transform vrLeftWrist;
-    public Transform vrRightWrist;
+    private Transform vrHead;
+    private Transform vrLeftWrist;
+    private Transform vrRightWrist;
 
     private bool lockRotation = false;
     private Quaternion neededRotation;

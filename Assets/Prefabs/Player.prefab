@@ -1038,8 +1038,8 @@ GameObject:
   - component: {fileID: 95417181076033230}
   - component: {fileID: 114896835040595016}
   - component: {fileID: 114334860599998900}
-  - component: {fileID: 114243449474325112}
   - component: {fileID: 114628365072608060}
+  - component: {fileID: 114243449474325112}
   - component: {fileID: 114395722077566514}
   m_Layer: 0
   m_Name: Player
@@ -4466,9 +4466,6 @@ MonoBehaviour:
   body: {fileID: 1945557009490614}
   heads: {fileID: 1600885370435464}
   hairs: {fileID: 1449722573584970}
-  vrHead: {fileID: 0}
-  vrLeftWrist: {fileID: 0}
-  vrRightWrist: {fileID: 0}
 --- !u!136 &136428134175699280
 CapsuleCollider:
   m_ObjectHideFlags: 1
