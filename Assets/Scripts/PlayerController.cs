@@ -6,9 +6,7 @@ using Valve.VR;
 using Valve.VR.InteractionSystem;
 
 public class PlayerController : NetworkBehaviour {
-
-    Animator animator;
-
+    
     public GameObject head;
     public GameObject leftHand;
     public GameObject rightHand;
@@ -16,6 +14,7 @@ public class PlayerController : NetworkBehaviour {
     public GameObject heads;
     public GameObject hairs;
 
+    private Animator animator;
     private Transform vrHead;
     private Transform vrLeftWrist;
     private Transform vrRightWrist;
