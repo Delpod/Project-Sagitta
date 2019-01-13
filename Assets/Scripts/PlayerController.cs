@@ -55,7 +55,7 @@ public class PlayerController : NetworkBehaviour {
         }
     }
  
-	private void Update () {
+	private void Update() {
         ManageHandsTransform();
         ManageHeadTransform();
     }

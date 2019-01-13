@@ -4,9 +4,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 public class IKHandling : NetworkBehaviour {
-
-    Animator animator;
-
+    
     public float ikWeight = 1;
     public Transform leftHandIKTarget;
     public Transform rightHandtIKTarget;
@@ -14,7 +12,9 @@ public class IKHandling : NetworkBehaviour {
     public Transform hintLeftHand;
     public Transform hintRightHand;
 
-    private void Start () {
+    private Animator animator;
+
+    private void Start() {
         if (isLocalPlayer) {
             FindLeftWrist();
             FindRightWrist();
