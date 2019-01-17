@@ -25,10 +25,12 @@ public class PlayerController : NetworkBehaviour {
     private bool lockRotation = false;
     private Quaternion neededRotation;
 
-    [ClientRpc]
-    public void RpcLose() {
-        if (isLocalPlayer) {
-            text.text = "You lost!";
+
+
+    [Command]
+    public void CmdWin() {
+        if (isServer) {
+            RpcWin();
         }
     }
 
@@ -40,16 +42,16 @@ public class PlayerController : NetworkBehaviour {
     }
 
     [Command]
-    public void CmdWin() {
-        if (isServer) {
-            RpcWin();
-        }
-    }
-
-    [Command]
     public void CmdLose() {
         if (isServer) {
             RpcLose();
+        }
+    }
+
+    [ClientRpc]
+    public void RpcLose() {
+        if (isLocalPlayer) {
+            text.text = "You lost!";
         }
     }
 
