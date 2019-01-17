@@ -40,11 +40,17 @@ public class HandMovementCopier : NetworkBehaviour {
             for (int i = 0; i < leftHandNodes.Count; ++i) {
                 leftHandNodes[i].position = vrLeftHandNodes[i].position;
                 leftHandNodes[i].rotation = vrLeftHandNodes[i].rotation;
+                if (i == 0) {
+                    leftHandNodes[i].Rotate(130f, 0f, 190f);
+                }
             }
 
             for (int i = 0; i < rightHandNodes.Count; ++i) {
                 rightHandNodes[i].position = vrRightHandNodes[i].position;
                 rightHandNodes[i].rotation = vrRightHandNodes[i].rotation;
+                if (i == 0) {
+                    rightHandNodes[i].Rotate(130f, 0f, 190f);
+                }
             }
         }
     }

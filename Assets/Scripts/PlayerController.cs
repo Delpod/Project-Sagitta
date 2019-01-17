@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Networking;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
@@ -14,19 +15,34 @@ public class PlayerController : NetworkBehaviour {
     public GameObject heads;
     public GameObject hairs;
 
+    public Text text;
+
     private Animator animator;
     private Transform vrHead;
     private Transform vrLeftWrist;
     private Transform vrRightWrist;
-
+    
     private bool lockRotation = false;
     private Quaternion neededRotation;
 
-    private void Start () {
+    [ClientRpc]
+    public void RpcLose() {
+        Debug.Log("Lose2");
+        text.text = "You lost!";
+    }
+
+    [ClientRpc]
+    public void RpcWin() {
+        Debug.Log("Win2");
+        text.text = "You win!";
+    }
+
+    private void Start() {
         if (isLocalPlayer) {
             FindLeftWrist();
             FindRightWrist();
             FindVRHead();
+            FindText();
             body.SetActive(false);
             heads.SetActive(false);
             hairs.SetActive(false);
@@ -52,6 +68,15 @@ public class PlayerController : NetworkBehaviour {
         GameObject rightWrist = GameObject.FindWithTag("RightWrist");
         if (rightWrist) {
             vrRightWrist = rightWrist.transform;
+        }
+    }
+
+    private void FindText() {
+        GameObject txt = GameObject.FindWithTag("StateText");
+        Debug.Log(txt);
+        if (txt) {
+            text = txt.GetComponent<Text>();
+            Debug.Log(text);
         }
     }
  

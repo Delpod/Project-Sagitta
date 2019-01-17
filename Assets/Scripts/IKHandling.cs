@@ -37,6 +37,10 @@ public class IKHandling : NetworkBehaviour {
     }
 
     private void OnAnimatorIK(int layerIndex) {
+        if (!leftHandIKTarget || !rightHandtIKTarget) {
+            return;
+        }
+
         animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, ikWeight);
         animator.SetIKPositionWeight(AvatarIKGoal.RightHand, ikWeight);
 

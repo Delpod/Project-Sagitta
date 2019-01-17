@@ -14,6 +14,11 @@ TagManager:
   - VRCamera
   - LeftHand
   - RightHand
+  - RightIKTarget
+  - LeftIKTarget
+  - Head
+  - StateText
+  - GameManager
   layers:
   - Default
   - TransparentFX
