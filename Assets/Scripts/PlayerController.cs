@@ -27,14 +27,30 @@ public class PlayerController : NetworkBehaviour {
 
     [ClientRpc]
     public void RpcLose() {
-        Debug.Log("Lose2");
-        text.text = "You lost!";
+        if (isLocalPlayer) {
+            text.text = "You lost!";
+        }
     }
 
     [ClientRpc]
     public void RpcWin() {
-        Debug.Log("Win2");
-        text.text = "You win!";
+        if (isLocalPlayer) {
+            text.text = "You win!";
+        }
+    }
+
+    [Command]
+    public void CmdWin() {
+        if (isServer) {
+            RpcWin();
+        }
+    }
+
+    [Command]
+    public void CmdLose() {
+        if (isServer) {
+            RpcLose();
+        }
     }
 
     private void Start() {
